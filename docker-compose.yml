@@ -1,0 +1,9 @@
+# ChartDB (fork) — sürekli açık değil, elle başlatılır (bkz. control-tower
+# registry notu). Kullanım: docker compose up --build -d / docker compose down
+# Upstream Dockerfile'a dokunulmadı; sadece host portu bağımsız (8084) verildi
+# - nodeflow-api (8080) ve builder-glow-verse (8083) ile çakışmasın diye.
+services:
+  web:
+    build: .
+    ports:
+      - "8084:80"
